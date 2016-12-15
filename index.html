@@ -30,11 +30,10 @@
 
 	</head>
 	<body>
-
-	<div id="js-timer" class="timer" data-endtime="2017-03-05 18:30:00">
-
-		<div class="timer" role="timer" aria-label="A timer, counting down to {{eventName}}">
-			<span class="timer__item" id="timer-days">
+   
+		<div id="js-timer" class="timer" role="timer" aria-label="A timer, counting down to {{eventName}}" data-endtime="2017-03-05 18:30:00">
+		
+      <span class="timer__item" id="timer-days">
 				<span class="timer__value">{{days}}</span>
 				<span class="timer__label">Days</span>
 			</span><!--/.timer__item-->
@@ -59,9 +58,8 @@
 					<abbr title="Seconds">Secs</abbr>
 				</span>
 			</span><!--/.timer__item-->
-		</div><!--/.sider-timer-->
-
-	</div>
+      
+		</div><!--/.timer-->
 
   <script src="timer.js"></script>
   <script>
