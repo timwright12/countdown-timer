@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Countdown Clock</title>
+
+    <style>
+      .timer__item {
+        display: inline-block;
+        text-align: center;
+      }
+
+      .timer__item + .timer__item {
+        margin-left: 10px;
+      }
+
+      .timer__value,
+      .timer__label {
+        display: block;
+      }
+
+      .timer__value {
+        font-size: 24px;
+      }
+
+      timer__label {
+        font-size: 16px;
+      }
+    </style>
+
+	</head>
+	<body>
+
+	<div id="js-timer" class="timer" data-endtime="2017-03-05 18:30:00">
+
+		<div class="timer" role="timer" aria-live="polite" aria-atomic="false" aria-relevant="all" aria-label="A timer, counting down to {{eventName}}">
+			<span class="timer__item" id="timer-days">
+				<span class="timer__value">{{days}}</span>
+				<span class="timer__label">Days</span>
+			</span><!--/.timer__item-->
+
+			<span class="timer__item" id="timer-hours">
+				<span class="timer__value">{{hours}}</span>
+				<span class="timer__label">
+					<abbr title="Hours">Hours</abbr>
+				</span>
+			</span><!--/.timer__item-->
+
+			<span class="timer__item" id="timer-minutes">
+				<span class="timer__value">{{minutes}}</span>
+				<span class="timer__label">
+					<abbr title="Minutes">Mins</abbr>
+				</span>
+			</span><!--/.timer__item-->
+
+			<span class="timer__item" id="timer-seconds">
+				<span class="timer__value">{{seconds}}</span>
+				<span class="timer__label">
+					<abbr title="Seconds">Secs</abbr>
+				</span>
+			</span><!--/.timer__item-->
+		</div><!--/.sider-timer-->
+
+	</div>
+
+  <script src="timer.js"></script>
+  <script>
+    (function() {
+
+      Timer.start( {
+        'timer' : document.getElementById( 'js-timer' ),
+        'endtime' : document.getElementById( 'js-timer' ).getAttribute( 'data-endtime' )
+      } );
+
+    })();
+  </script>
+
+	</body>
+</html>
