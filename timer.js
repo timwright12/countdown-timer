@@ -14,8 +14,11 @@
    */
   Timer.ns = "JavaScript Timer";
 
-  Timer.getTimeRemaining = function( endtime ) {
-
+  Timer.getTimeRemaining = function( endtimeRaw ) {
+    
+    // Some browsers need a "T" in there...
+		var endtime = new Date( endtimeRaw.replace(/\s/, 'T') );
+    
     var t = Date.parse( endtime ) - Date.parse( new Date() );
     var seconds = Math.floor( ( t / 1000 ) % 60 );
     var minutes = Math.floor( ( t / 1000 / 60 ) % 60 );
